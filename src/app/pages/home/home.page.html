@@ -1,0 +1,7 @@
+<app-header (emitTasks)="onEmitTask($event)"></app-header>
+<ion-content>
+  <app-task-list [tasks]="tasks"></app-task-list>
+  <ion-button (click)="addNewTask()" expand="block" class="ion-padding" shape="round">
+      Nueva Tarea
+  </ion-button>
+</ion-content>

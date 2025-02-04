@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Administrar Categorías</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="light"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input placeholder="Escribe una nueva categoría" [(ngModel)]="newCategory"></ion-input>
+    <ion-button (click)="addCategory()">Agregar</ion-button>
+  </ion-item>
+
+  <ion-list>
+
+    <ion-item *ngFor="let category of categories; let i = index">
+      <ng-container *ngIf="editingCategoryId === category.id; else viewMode">
+        <ion-input [(ngModel)]="editedCategoryName"></ion-input>
+        <ion-button (click)="saveEdit(category.id, category.name)">Guardar</ion-button>
+        <ion-button color="medium" (click)="cancelEdit()">Cancelar</ion-button>
+      </ng-container>
+
+      <ng-template #viewMode>
+
+        <ion-label> {{i + 1}} . {{ category.name }}</ion-label>
+        <ion-button (click)="startEditing(category)">Editar</ion-button>
+        <ion-button color="danger" (click)="deleteCategory(category.id)">Eliminar</ion-button>
+      </ng-template>
+    </ion-item>
+  </ion-list>
+</ion-content>
