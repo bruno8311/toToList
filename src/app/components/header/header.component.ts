@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ActionSheetController, AlertController, ModalController, NavController } from '@ionic/angular';
 import { StorageService } from 'src/app/services/storage.service';
-import { TaskModalComponent } from '../task-modal/task-modal.component';
+import { TaskCreateModalComponent } from '../task-modal/task-modal.component';
 import { Task } from 'src/app/interfaces/task.interface';
 
 @Component({
@@ -53,7 +53,7 @@ export class HeaderComponent {
     
 
     const modal = await this.modalCtrl.create({
-      component: TaskModalComponent,
+      component: TaskCreateModalComponent,
     });
     modal.present();
   }

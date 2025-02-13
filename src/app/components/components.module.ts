@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { TaskListComponent } from './task-list/task-list.component';
-import { TaskModalComponent } from './task-modal/task-modal.component';
+import { TaskCreateModalComponent } from './task-modal/task-modal.component';
 import { FormsModule } from '@angular/forms';
 import { TaskEditModalComponent } from './task-edit-modal/task-edit-modal.component';
 
@@ -13,7 +13,7 @@ import { TaskEditModalComponent } from './task-edit-modal/task-edit-modal.compon
   [
     HeaderComponent,
     TaskListComponent,
-    TaskModalComponent,
+    TaskCreateModalComponent,
     TaskEditModalComponent
   ],
   imports: [
@@ -24,7 +24,7 @@ import { TaskEditModalComponent } from './task-edit-modal/task-edit-modal.compon
   exports: [
     HeaderComponent,
     TaskListComponent,
-    TaskModalComponent,
+    TaskCreateModalComponent,
     TaskEditModalComponent
   ]
 })

@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./task-modal.component.scss'],
   standalone: false
 })
-export class TaskModalComponent {
+export class TaskCreateModalComponent {
   category!: Category;
   name: string = '';
   categories: Category[] = [];
