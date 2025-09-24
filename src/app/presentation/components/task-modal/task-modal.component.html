@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ingresar Tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input  label="Tarea: " [(ngModel)]="name" placeholder="Nombre"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Categoría (Opcional): </ion-label>
+      
+      <ion-row  *ngIf="categories.length > 0" class="ion-align-items-center" style="width: 100%;" >
+        <ion-col size="6" > 
+          <ion-select style="width: 100%;"
+            placeholder="Sin categoría"
+            [(ngModel)]="category"
+            clearable="true"
+            >
+            <ion-select-option *ngFor="let category of categories" [value]="category">
+              {{ category.name }}
+            </ion-select-option>
+          </ion-select>
+        </ion-col>
+    
+        <ion-col size="6">
+          <ion-button (click)="redirectoCategories()" color="secondary" expand="block">Administrar Categorías</ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row style="width: 100%;" *ngIf="categories.length <= 0">
+        <ion-col  size="6">
+          <ion-input [disabled]="true" placeholder="Sin categoría"></ion-input>
+        </ion-col>
+
+        <ion-col size="6">
+          <ion-button (click)="redirectoCategories()" color="secondary" expand="block">Crear Categorías</ion-button>
+        </ion-col>
+      </ion-row>
+
+
+    </ion-item>
+  </ion-list>
+  <ion-button 
+    expand="block" 
+    class="ion-padding" 
+    shape="round" 
+    (click)="createTask()"
+    [disabled]="isInvalidButton()">
+    Crear Tarea
+  </ion-button>
+</ion-content>

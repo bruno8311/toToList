@@ -1,2 +1,159 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+// ============================================
+// VARIABLES DE TEMA PARA toToList APP
+// ============================================
+
+// ============================================
+// COLORES PRINCIPALES
+// ============================================
+:root {
+  // Colores primarios de la aplicación
+  --primary-color: #3880ff;
+  --primary-light: #5598ff;
+  --primary-dark: #2968cc;
+
+  
+  // Colores secundarios
+  --secondary-color: #3dc2ff;
+  --secondary-light: #70d4ff;
+  --secondary-dark: #2aa1cc;
+  
+  // Colores de estado
+  --success-color: #2dd36f;
+  --warning-color: #ffc409;
+  --danger-color: #eb445a;
+  --info-color: #3dc2ff;
+  
+  // Colores de texto
+  --text-primary: #222428;
+  --text-secondary: #515560;
+  --text-tertiary: #73747a;
+  --text-light: #ffffff;
+  
+  // Colores de fondo
+  --background-primary: #ffffff;
+  --background-secondary: #f7f7f7;
+  --background-tertiary: #f1f3f4;
+  --background-card: #ffffff;
+  
+  // Colores de borde
+  --border-color: #e7e7e7;
+  --border-color-dark: #d7d8da;
+  
+  // ============================================
+  // ESPACIADO Y DIMENSIONES
+  // ============================================
+  
+  // Espaciado base (8px)
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  
+  // Radios de borde
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  
+  // Sombras
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  
+  // ============================================
+  // TIPOGRAFÍA
+  // ============================================
+  
+  // Tamaños de fuente
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 24px;
+  --font-size-xxxl: 32px;
+  
+  // Pesos de fuente
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  // Altura de línea
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  // ============================================
+  // TRANSICIONES Y ANIMACIONES
+  // ============================================
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.35s ease;
+  
+  // ============================================
+  // CONFIGURACIÓN ESPECÍFICA DE IONIC
+  // ============================================
+  
+  // Colores de Ionic
+  --ion-color-primary: var(--primary-color);
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: var(--primary-dark);
+  --ion-color-primary-tint: var(--primary-light);
+  
+  --ion-color-secondary: var(--secondary-color);
+  --ion-color-secondary-rgb: 61, 194, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: var(--secondary-dark);
+  --ion-color-secondary-tint: var(--secondary-light);
+  
+  --ion-color-success: var(--success-color);
+  --ion-color-success-rgb: 45, 211, 111;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #28ba62;
+  --ion-color-success-tint: #42d77d;
+  
+  --ion-color-warning: var(--warning-color);
+  --ion-color-warning-rgb: 255, 196, 9;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0ac08;
+  --ion-color-warning-tint: #ffca22;
+  
+  --ion-color-danger: var(--danger-color);
+  --ion-color-danger-rgb: 235, 68, 90;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #cf3c4f;
+  --ion-color-danger-tint: #ed576b;
+}
+
+// ============================================
+// TEMA OSCURO (OPCIONAL)
+// ============================================
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --text-tertiary: #8c8c8c;
+    
+    --background-primary: #1a1a1a;
+    --background-secondary: #2c2c2c;
+    --background-tertiary: #3a3a3a;
+    --background-card: #2c2c2c;
+    
+    --border-color: #404040;
+    --border-color-dark: #303030;
+  }
+}

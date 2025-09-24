@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Editar Tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Tarea:</ion-label>
+      <ion-input [(ngModel)]="task.title" placeholder="Nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Categoría (Opcional):</ion-label>
+      <ion-select interface="popover" [(ngModel)]="task.categoryName" placeholder="Sin categoría" clearable="true">
+        <ion-select-option *ngFor="let category of categories" [value]="category.name">
+          {{ category.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-row>
+    <ion-col size="6">
+      <ion-button expand="block" class="ion-padding" shape="round" (click)="editTask()">
+        <ion-icon slot="start" name="save"></ion-icon>
+        Guardar
+      </ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <ion-button expand="block" class="ion-padding" shape="round" color="medium" color="danger" (click)="cancelTask()">
+        <ion-icon slot="start" name="trash"></ion-icon>
+        Cancelar</ion-button>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

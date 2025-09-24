@@ -4,11 +4,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./presentation/pages/home/home.module').then( m => m.HomePageModule)
   },
   {
     path: 'categories',
-    loadChildren: () => import('./pages/categories/categories.module').then( m => m.CategoriesPageModule)
+    loadChildren: () => import('./presentation/pages/categories/categories.module').then( m => m.CategoriesPageModule)
   },
   {
     path: '**',
@@ -18,7 +18,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }) //Se puede considerar usar NoPreloading para mejorar el rendimiento inicial
   ],
   exports: [RouterModule]
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { FirebaseX } from '@awesome-cordova-plugins/firebase-x/ngx';
-import { FeatureFlagService } from './services/feature-flag.service'; // Importa el servicio
+import { FeatureFlagService } from './presentation/services/feature-flag.service'; // Importa el servicio
 
 @Component({
   selector: 'app-root',
@@ -19,12 +19,13 @@ export class AppComponent {
       this.fetchFeatureFlag();
     });
   }
+
   async fetchFeatureFlag() {
     try {
       await this.firebaseX.fetch(0);
       await this.firebaseX.activateFetched();
       const featureFlag = await this.firebaseX.getValue('feature_flag');
-      this.featureFlagService.setFeatureFlag(featureFlag)
+      this.featureFlagService.setFeatureFlag(featureFlag);
     } catch (error) {
       console.error('Error al obtener el Feature Flag:', error);
     }
